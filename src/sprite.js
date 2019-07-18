@@ -8,10 +8,11 @@ export default class Person {
     this.person.src = "../assets/images/person-icon.png"
     this.x = Math.random() * 480;
     this.y = Math.random() * 640;
+    while (this.x > 157 && this.x < 257 ) this.x = Math.random() * 480;
     // this.x = 300;
     // this.y = 450;
     this.endY = 290;
-    this.endX = 190;
+    this.endX = 207;
     console.log(this.x, this.y)
     this.animate = this.animate.bind(this);
   }

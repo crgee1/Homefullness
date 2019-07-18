@@ -5,15 +5,14 @@ export default class Render {
     this.ctx = canvas.getContext("2d");
     // this.person = new Image();
     // this.person.src = "../assets/images/person-icon.png"
-
+    this.house = new Image();
+    this.house.src = "../assets/images/house.png";
     this.animate = this.animate.bind(this);
     // this.ctx.drawImage(this.person, 100, 100, 100, 100);
     // this.animate();
     // this.ctx.fillRect(190, 250, 80, 120);
 
     this.registerEvents();
-    this.x = canvas.width;
-    this.y = 100;
     
     // this.person = new Person(canvas);
     this.personArr = [];
@@ -24,7 +23,8 @@ export default class Render {
   }
 
   registerEvents() {
-    this.ctx.fillRect(190, 250, 80, 120);
+    this.ctx.drawImage(this.house, 190, 250, 100, 100)
+    // this.ctx.fillRect(190, 250, 80, 120);
     this.boundClickHandler = this.click.bind(this);
     this.ctx.canvas.addEventListener("mousedown", this.boundClickHandler);
   }
@@ -44,7 +44,7 @@ export default class Render {
     // if (true) requestAnimationFrame(this.animate);
     setInterval(() => {
       this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-      this.ctx.fillRect(190, 250, 80, 120);
+      this.ctx.drawImage(this.house, 190, 250, 100, 100);
     }, 10)
     // this.ctx.drawImage(this.person, this.x, this.y, 70, 70); 
     // this.x -= .8;
