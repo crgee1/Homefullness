@@ -11,7 +11,7 @@ The intent of Homefullness is to visualize the homeless population for a given y
 
 ## Architectures and Technologies
 
-* Vanilla JavaScript for overall structure and game logic,
+* Vanilla JavaScript for overall structure and logic,
 * HTML5 Canvas for DOM manipulation and rendering,
 * Webpack to bundle and serve up the various scripts
 
