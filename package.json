@@ -2,9 +2,10 @@
   "name": "homefullness",
   "version": "1.0.0",
   "description": "The intent of Homefullness is to visualize the homeless population for a given year. Figures will enter a house and it will grow proportionally based on the population for that year.",
-  "main": "data.js",
+  "main": "entry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/crgee1/Homefullness/issues"
   },
-  "homepage": "https://github.com/crgee1/Homefullness#readme"
+  "homepage": "https://github.com/crgee1/Homefullness#readme",
+  "dependencies": {
+    "webpack": "^4.36.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.6"
+  }
 }
