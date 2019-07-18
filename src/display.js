@@ -31,7 +31,7 @@ export default class Render {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     // this.frame = requestAnimationFrame(this.animate);
     console.log("rendering");
-    this.personArr.forEach(person => setTimeout(() => person.animate(), 2))
+    this.personArr.forEach(person => setTimeout(() => person.animate(), Math.random() * 2500))
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     // if (true) requestAnimationFrame(this.animate);
     setInterval(() => {
