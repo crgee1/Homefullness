@@ -13,9 +13,12 @@ export default class Render {
 
     this.registerEvents();
     this.x = canvas.width;
-    console.log(canvas.width)
     this.y = 100;
-    this.person = new Person(canvas);
+    // this.person = new Person(canvas);
+    this.personArr = [];
+    for(let i = 0; i < 5; i++) {
+      this.personArr.push(new Person(canvas));
+    }
     
   }
 
@@ -32,12 +35,19 @@ export default class Render {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     // this.frame = requestAnimationFrame(this.animate);
     console.log("rendering");
-    this.ctx.fillRect(190, 250, 80, 120);
-    this.person.animate();
+    this.personArr.forEach(person => setTimeout(() => person.animate(), 2))
+    // this.person.animate();
+    
+    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // if (true) requestAnimationFrame(this.animate);
+    setInterval(() => {
+      this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+      this.ctx.fillRect(190, 250, 80, 120);
+    }, 10)
     // this.ctx.drawImage(this.person, this.x, this.y, 70, 70); 
     // this.x -= .8;
     // this.y -= -0.413;
-    if (this.x > 190) requestAnimationFrame(this.animate) 
+    // if (this.x > 190) requestAnimationFrame(this.animate) 
     // this.draw();
   }
 
