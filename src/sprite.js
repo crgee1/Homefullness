@@ -6,36 +6,47 @@ export default class Person {
     this.ctx = canvas.getContext("2d");
     this.person = new Image();
     this.person.src = "../assets/images/person-icon.png"
-    this.x = Math.random() * 480;
-    this.y = Math.random() * 640;
-    while (this.x > 157 && this.x < 257 ) this.x = Math.random() * 480;
-    // this.x = 300;
-    // this.y = 450;
-    this.endY = 290;
-    this.endX = 207;
-    console.log(this.x, this.y)
+    this.startY = 490;
+    this.startX = 446;
+    // this.x = Math.random() * 800;
+    // this.y = Math.random() * 800;
+    this.endX = 600;
+    this.endY = 600;
+    // while (this.endX > this.endX - 70 && this.endX < this.endX + 70 ) this.endX = Math.random() * 480;
+    console.log(this.endX, this.endY)
     this.animate = this.animate.bind(this);
   }
 
   animate() {
-    // this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-    this.ctx.drawImage(this.person, this.x, this.y, 70, 70);
-    // this.ctx.fillRect(190, 250, 80, 120);
-    let slope = (this.y - this.endY) / (this.x - this.endX);
+    this.ctx.drawImage(this.person, this.startX, this.startY, 70, 70);
+    let slope = (this.endY - this.startY) / (this.endX - this.startX);
     console.log(slope);
-    if (this.x > this.endX && this.y < this.endY) {
-      this.x -= 1.2;
-      this.y -= slope * 1.2;
-    } else if (this.x < this.endX && this.y < this.endY) {
-      this.x += 1.2;
-      this.y += slope * 1.2;
-    } else if (this.x < this.endX && this.y > this.endY) {
-      this.x += 1.2;
-      this.y += slope * 1.2;
+    // if (this.endX > this.startX && this.endY < this.startY) {
+    //   this.endX -= 1.2;
+    //   this.endY -= slope * 1.2;
+    // } else if (this.endX < this.startX && this.endY < this.startY) {
+    //   this.endX += 1.2;
+    //   this.endY += slope * 1.2;
+    // } else if (this.endX < this.startX && this.endY > this.startY) {
+    //   this.endX += 1.2;
+    //   this.endY += slope * 1.2;
+    // } else {
+    //   this.endX -= 1.2;
+    //   this.endY -= slope * 1.2;
+    // }
+    if (this.startX < this.endX && this.startY > this.endY) {
+      this.startX += 1.2;
+      this.startY += slope * 1.2;
+    } else if (this.startX > this.endX && this.startY > this.endY) {
+      this.startX -= 1.2;
+      this.startY -= slope * 1.2;
+    } else if (this.startX > this.endX && this.startY < this.endY) {
+      this.startX -= 1.2;
+      this.startY -= slope * 1.2;
     } else {
-      this.x -= 1.2;
-      this.y -= slope * 1.2;
+      this.startX += 1.2;
+      this.startY += slope * 1.2;
     }
-    if (this.x > this.endX || this.x < this.endX - 2) requestAnimationFrame(this.animate);
+    if (true) requestAnimationFrame(this.animate);
   }
 }
