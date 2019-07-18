@@ -14,6 +14,7 @@ export default class Render {
     this.registerEvents();
     this.x = canvas.width;
     this.y = 100;
+    
     // this.person = new Person(canvas);
     this.personArr = [];
     for(let i = 0; i < 5; i++) {
@@ -23,6 +24,7 @@ export default class Render {
   }
 
   registerEvents() {
+    this.ctx.fillRect(190, 250, 80, 120);
     this.boundClickHandler = this.click.bind(this);
     this.ctx.canvas.addEventListener("mousedown", this.boundClickHandler);
   }

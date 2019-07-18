@@ -23,17 +23,17 @@ export default class Person {
     let slope = (this.y - this.endY) / (this.x - this.endX);
     console.log(slope);
     if (this.x > this.endX && this.y < this.endY) {
-      this.x -= 0.8;
-      this.y -= slope * 0.8;
+      this.x -= 1.2;
+      this.y -= slope * 1.2;
     } else if (this.x < this.endX && this.y < this.endY) {
-      this.x += -.8;
-      this.y += slope * 0.8;
+      this.x += 1.2;
+      this.y += slope * 1.2;
     } else if (this.x < this.endX && this.y > this.endY) {
-      this.x += 0.8;
-      this.y += slope * 0.8;
+      this.x += 1.2;
+      this.y += slope * 1.2;
     } else {
-      this.x -= 0.8;
-      this.y -= slope * 0.8;
+      this.x -= 1.2;
+      this.y -= slope * 1.2;
     }
     if (this.x > this.endX || this.x < this.endX - 2) requestAnimationFrame(this.animate);
   }
