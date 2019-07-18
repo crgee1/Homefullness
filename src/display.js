@@ -1,4 +1,4 @@
-import Person from './sprite';
+import Person from './person';
 
 export default class Render {
   constructor(canvas) {
@@ -11,7 +11,7 @@ export default class Render {
     for(let i = 0; i < 10; i++) {
       this.personArr.push(new Person(canvas));
     }
-    
+    this.drawHouse = this.drawHouse.bind(this);
   }
 
   drawHouse() {
@@ -19,6 +19,7 @@ export default class Render {
   }
 
   registerEvents() {
+    this.drawHouse();
     this.boundClickHandler = this.click.bind(this);
     this.ctx.canvas.addEventListener("mousedown", this.boundClickHandler);
   }
