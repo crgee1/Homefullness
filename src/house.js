@@ -1,28 +1,28 @@
 export default class House {
-  constructor(canvas) {
-    this.ctx = canvas.getContext("2d");
+  constructor(ctx) {
+    this.ctx = ctx;
     this.house = new Image();
     this.house.src = "../assets/images/house.png"
+    this.pos = { x: 430, y: 450 };
     this.size = 100;
     this.grow = this.grow.bind(this);
     this.draw = this.draw.bind(this);
   }
 
   grow() {
-    // if (true) this.frame = requestAnimationFrame(this.grow);
-    // this.ctx.save();
-    this.ctx.translate(430, 450);
-    // console.log(this.house.width)
-    // let halfW = this.house.width/2;
-    // let halfH = this.house.height/2;
-    // this.ctx.translate(halfW, halfH);
-    // this.ctx.scale(1,1);
-    // this.ctx.drawImage(this.house, -halfW, -halfH);
-    this.ctx.drawImage(this.house, 430, 450, this.size, this.size);
-    // this.ctx.restore();
+    this.frame = requestAnimationFrame(this.grow);
+    if (this.size < 400) {
+      this.size += 1;
+      this.pos.x -= .5;
+      this.pos.y -= .95;
+      // this.size += .1;
+      // this.pos.x -= .05;
+      // this.pos.y -= .08;
+    }
+    this.ctx.drawImage(this.house, this.pos.x, this.pos.y, this.size, this.size);
   }
 
   draw() {
-    this.ctx.drawImage(this.house, 430, 450, this.size, this.size);
+    this.ctx.drawImage(this.house, this.pos.x, this.pos.y, this.size, this.size);
   }
 }
