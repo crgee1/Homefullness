@@ -1,22 +1,30 @@
 canvas {
-      border: 1px solid #000;
-      display: block;
-      margin: 0 auto;
-    }
+  border: 1px solid #000;
+  display: block;
+  margin: 0 auto;
+}
 
-    html, body {
-      margin: 0;
-      height: 100%;
-    }
+html, body {
+  margin: 0;
+  height: 100%;
+}
 
-    body {
-      display: flex;
-    }
+body {
+  display: flex;
+}
 
-    div {
-      margin: 0 auto;
-      height: 100%;
-      width: 500px;
-      display: flex;
-      align-items: center;
-    }
+div {
+  margin: 0 auto;
+  height: 100%;
+  width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  
+}
+
+.bar:hover {
+  fill: gray;
+}
