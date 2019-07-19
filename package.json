@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/crgee1/Homefullness#readme",
   "dependencies": {
+    "d3": "^5.9.7",
     "webpack": "^4.36.1"
   },
   "devDependencies": {
