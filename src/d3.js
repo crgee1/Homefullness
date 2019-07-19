@@ -3,10 +3,11 @@ import data from './data';
 
 export default class Graph {
   constructor() {
-    this.data = Object.values(data.sanFrancisco);
-    this.dataLabel = Object.keys(data.sanFrancisco);
+    // this.data = Object.values(data.sanFrancisco);
+    // this.dataLabel = Object.keys(data.sanFrancisco);
+    this.data = data;
     console.log(this.data)
-    console.log(this.dataLabel)
+    // console.log(this.dataLabel)
     this.svg = d3.select(div).append("svg")
       .attr("height", "100%")
       .attr("width", "100%");
@@ -15,27 +16,26 @@ export default class Graph {
       .data(this.data)
       .enter().append("rect")
       .attr("class", "bar")
-      .attr("height", function (d, i) { return (d / 30) })
+      .attr("height", function (d, i) { return (d.value / 30) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 25 })
-      .attr("y", function (d, i) { return 600 - (d / 30) });
+      .attr("y", function (d, i) { return 600 - (d.value / 30) });
 
     this.svg.selectAll("text")
       .data(this.data)
       .enter().append("text")
-      .text(function (d) { return d })
+      .text(function (d) { return d.value })
       .attr("class", "text")
       .attr("x", function (d, i) { return (i * 60) + 30 })
-      .attr("y", function (d, i) { return 600 - (d / 28) });
-    
+      .attr("y", function (d, i) { return 600 - (d.value / 28) });
+   
     this.svg.selectAll("label")
-      .data(this.dataLabel)
-      .enter().append("label")
-      .text(function (d) { return d })
+      .data(this.data)
+      .enter().append("text")
+      .text(function (d) { return d.year })
       .attr("class", "label")
-      // .attr("color", "white")
       .attr("x", function (d, i) { return (i * 60) + 30 })
-      .attr("y", function (d, i) { return 600 - (d / 5) });
+      .attr("y", function (d, i) { return 615 });
   }
   
 }
