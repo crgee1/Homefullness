@@ -8,7 +8,7 @@ export default class Render {
     this.animate = this.animate.bind(this);
     this.registerEvents();
     this.personArr = [];
-    for(let i = 0; i < 50; i++) {
+    for(let i = 0; i < 100; i++) {
       this.personArr.push(new Person(this.ctx));
     }
   }
@@ -30,11 +30,11 @@ export default class Render {
 
   animate() {
     // this.frame = requestAnimationFrame(this.animate);
-    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     // if (true) requestAnimationFrame(this.animate);
-    setInterval(() => {
+    let interval = setInterval(() => {
       this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }, 10)
+    }, 1)
     // this.house.draw();
     this.house.grow();
     this.personArr.forEach(person => setTimeout(() => person.animate(), Math.random() * 2500))

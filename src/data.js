@@ -1,4 +1,4 @@
-const homeless = {
+ const homeless = {
   sanFrancisco: {
     2005: 6248,
     2007: 6377,
@@ -10,3 +10,5 @@ const homeless = {
     2019: 9784,
   }
 }
+
+export default homeless

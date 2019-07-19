@@ -1,19 +1,27 @@
 import * as d3 from 'd3'; 
+import data from './data';
 
-var dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];
+export default class Graph {
+  constructor() {
+    this.dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];
+    // this.dataArray = Object.values(data.sanFrancisco);
+    console.log(this.dataArray)
+    this.svg = d3.select(div).append("svg")
+      .attr("height", "100%")
+      .attr("width", "100%");
 
-var svg = d3.select("body").append("svg")
-  .attr("height", "100%")
-  .attr("width", "100%");
+    this.svg.selectAll("rect")
+      .data(this.dataArray)
+      .enter().append("rect")
+      .attr("height", function (d, i) { return (d * 10) })
+      .attr("width", "40")
+      .attr("x", function (d, i) { return (i * 60) + 25 })
+      .attr("y", function (d, i) { return 400 - (d * 10) });
 
-svg.selectAll("rect")
-  .data(dataArray)
-  .enter().append("rect")
-  .attr("height", "250")
-  .attr("width", "40")
-  .attr("x", function (d, i) { return (i * 60) + 25 })
-  .attr("y", "50");
 
+  }
+  
+}
 
 
 
