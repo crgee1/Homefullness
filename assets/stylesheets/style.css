@@ -1,0 +1,22 @@
+canvas {
+      border: 1px solid #000;
+      display: block;
+      margin: 0 auto;
+    }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+    }
+
+    div {
+      margin: 0 auto;
+      height: 100%;
+      width: 500px;
+      display: flex;
+      align-items: center;
+    }

@@ -3,8 +3,8 @@ import data from './data';
 
 export default class Graph {
   constructor() {
-    this.dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];
-    // this.dataArray = Object.values(data.sanFrancisco);
+    // this.dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];
+    this.dataArray = Object.values(data.sanFrancisco);
     console.log(this.dataArray)
     this.svg = d3.select(div).append("svg")
       .attr("height", "100%")
@@ -13,10 +13,10 @@ export default class Graph {
     this.svg.selectAll("rect")
       .data(this.dataArray)
       .enter().append("rect")
-      .attr("height", function (d, i) { return (d * 10) })
+      .attr("height", function (d, i) { return (d / 30) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 25 })
-      .attr("y", function (d, i) { return 400 - (d * 10) });
+      .attr("y", function (d, i) { return 600 - (d / 30) });
 
 
   }
