@@ -8,7 +8,7 @@ export default class Render {
     this.animate = this.animate.bind(this);
     this.registerEvents();
     this.personArr = [];
-    for(let i = 0; i < 100; i++) {
+    for(let i = 0; i < 50; i++) {
       this.personArr.push(new Person(this.ctx));
     }
   }
