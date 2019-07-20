@@ -1,21 +1,21 @@
 import * as d3 from 'd3'; 
 import data from './data';
+import Display from './display';
 
 export default class Graph {
-  constructor() {
-    // this.data = Object.values(data.sanFrancisco);
-    // this.dataLabel = Object.keys(data.sanFrancisco);
+  constructor(canvas) {
+    this.display = new Display(canvas);
     this.data = data;
-    console.log(this.data)
-    // console.log(this.dataLabel)
     this.svg = d3.select(div).append("svg")
       .attr("height", "100%")
       .attr("width", "100%");
+      console.log(this.display)
 
     this.svg.selectAll("rect")
       .data(this.data)
       .enter().append("rect")
       .attr("class", "bar")
+      .on('click', function (d) {new Display(canvas).animate(d.value)} )
       .attr("height", function (d, i) { return (d.value / 30) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 25 })
