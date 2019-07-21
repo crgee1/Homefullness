@@ -23,8 +23,8 @@ export default class Render {
   }
 
   setupAnimate(value){
-    for (let i = 0; i < Math.floor(1000 / 100); i++) {
-      this.personArr.push(new Person(this.ctx));
+    for (let i = 0; i < Math.floor(value / 100); i++) {
+      this.personArr.push(new Person(this.ctx, i));
     }
     console.log('this')
     this.animate();

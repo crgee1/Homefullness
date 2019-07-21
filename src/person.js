@@ -1,10 +1,11 @@
 export default class Person {
-  constructor(ctx) {
+  constructor(ctx, n) {
     this.ctx = ctx;
     this.person = new Image();
     this.person.src = "../assets/images/person-icon.png"
     this.startY = 490;
     this.startX = 446;
+    this.n = n
     this.endX = Math.floor(Math.random() * 800);
     this.endY = Math.floor(Math.random() * 800);
     while (this.endX > this.startX - 100 && this.endX < this.startX + 100 ) this.endX = Math.random() * 800;
