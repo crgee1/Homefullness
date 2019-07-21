@@ -1,4 +1,3 @@
-import Display from './display';
 import Graph from './d3'; 
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -15,7 +15,7 @@ export default class Graph {
       .data(this.data)
       .enter().append("rect")
       .attr("class", "bar")
-      .on('click', function (d) {new Display(canvas).animate(d.value)} )
+      .on('click', function (d) {new Display(canvas).setupAnimate(d.value)} )
       .attr("height", function (d, i) { return (d.value / 30) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 25 })

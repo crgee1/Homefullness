@@ -18,17 +18,21 @@ export default class Render {
 
   click(e) {
     this.animate();
-    this.animate();
-    this.animate();
     // this.house.grow();
     // this.house.draw();
   }
 
-  animate(value) {
-    for (let i = 0; i < Math.floor(value / 100); i++) {
+  setupAnimate(value){
+    for (let i = 0; i < Math.floor(1000 / 100); i++) {
       this.personArr.push(new Person(this.ctx));
     }
-    // this.frame = requestAnimationFrame(this.animate);
+    console.log('this')
+    this.animate();
+  }
+
+  animate() {
+    
+    this.frame = requestAnimationFrame(this.animate);
     // this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     // if (true) requestAnimationFrame(this.animate);
     let interval = setInterval(() => {
@@ -36,6 +40,7 @@ export default class Render {
     }, 1)
     // this.house.draw();
     this.house.grow();
-    this.personArr.forEach(person => setTimeout(() => person.animate(), Math.random() * 2500))
+    this.personArr.forEach(person => person.animate())
+    // this.personArr.forEach(person => setTimeout(() => person.animate(), Math.random() * 2500))
   }
 }
