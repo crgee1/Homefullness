@@ -1,5 +1,5 @@
 canvas {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   display: block;
   margin: 0 auto;
 }
@@ -13,9 +13,9 @@ body {
   display: flex;
 }
 
-div {
+#graph {
   margin: 0 auto;
-  height: 100%;
+  height: 66%;
   width: 500px;
   display: flex;
   align-items: center;
@@ -25,6 +25,19 @@ div {
   
 }
 
+.legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+}
+
 .bar:hover {
   fill: gray;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

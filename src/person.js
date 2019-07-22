@@ -6,7 +6,7 @@ export default class Person {
     this.startY = 490;
     this.startX = 446;
     this.endX = 30 + 30 * (n % 7);
-    this.endY = 10 + 65 * Math.floor(n / 7);
+    this.endY = 10 + 62 * Math.floor(n / 7);
     // while (this.endX > this.startX - 100 && this.endX < this.startX + 100 ) this.endX = Math.random() * 800;
     this.animate = this.animate.bind(this);
   }
