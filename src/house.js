@@ -10,7 +10,7 @@ export default class House {
   }
 
   grow() {
-    this.frame = requestAnimationFrame(this.grow);
+    this.ctx.drawImage(this.house, this.pos.x, this.pos.y, this.size, this.size);
     if (this.size < 400) {
       this.size += 1;
       this.pos.x -= .5;
@@ -19,7 +19,6 @@ export default class House {
       // this.pos.x -= .05;
       // this.pos.y -= .08;
     }
-    this.ctx.drawImage(this.house, this.pos.x, this.pos.y, this.size, this.size);
   }
 
   draw() {

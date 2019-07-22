@@ -30,9 +30,14 @@ export default class Render {
     this.animate();
   }
 
+  cancel() {
+    console.log(this.frame);
+    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    window.cancelAnimationFrame(this.frame);
+  }
+
   animate() {
-    
-    this.frame = requestAnimationFrame(this.animate);
+    this.frame = window.requestAnimationFrame(this.animate);
     // this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     // if (true) requestAnimationFrame(this.animate);
     let interval = setInterval(() => {

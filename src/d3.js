@@ -4,19 +4,24 @@ import Display from './display';
 
 export default class Graph {
   constructor(canvas) {
-    this.display = new Display(canvas);
+    let display = new Display(canvas);
     this.data = data;
     this.svg = d3.select(div).append("svg")
       .attr("height", "100%")
       .attr("width", "100%");
       console.log(this.display)
 
+    this.setup(display);
+  }
+
+  setup(display){
     this.svg.selectAll("rect")
       .data(this.data)
       .enter().append("rect")
       .attr("class", "bar")
-      .on('click', function (d) {new Display(canvas).setupAnimate(d.value)} )
-      // .on('mouseenter', function (d) {new Display(canvas).setupAnimate(d.value)} )
+      // .on('click', function (d) {new Display(canvas).setupAnimate(d.value)} )
+      .on('mouseenter', function (d) {display.setupAnimate(d.value)} )
+      .on('mouseleave', function (d) {display.cancel()} )
       .attr("height", function (d, i) { return (d.value / 30) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 25 })
