@@ -6,43 +6,44 @@ export default class Render {
     this.ctx = canvas.getContext("2d");
     this.house = new House(this.ctx);
     this.animate = this.animate.bind(this);
-    this.registerEvents();
     this.personArr = [];
+    this.clear = this.clear.bind(this);
+
+    // this.registerEvents();
   }
 
 
-  registerEvents() {
-    this.boundClickHandler = this.click.bind(this);
-    this.ctx.canvas.addEventListener("mousedown", this.boundClickHandler);
-  }
+  // registerEvents() {
+  //   this.boundClickHandler = this.click.bind(this);
+  //   this.ctx.canvas.addEventListener("mousedown", this.boundClickHandler);
+  // }
 
-  click(e) {
-    this.animate();
-    // this.house.grow();
-    // this.house.draw();
-  }
+  // click(e) {
+  //   this.animate();
+  //   this.house.grow();
+  //   this.house.draw();
+  // }
 
   setupAnimate(value){
     for (let i = 0; i < Math.floor(value / 100); i++) {
       this.personArr.push(new Person(this.ctx, i));
     }
-    console.log('this')
     this.animate();
   }
 
   cancel() {
-    console.log(this.frame);
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-    window.cancelAnimationFrame(this.frame);
+    cancelAnimationFrame(this.frame);
+    this.personArr = [];
+  }
+
+  clear() {
+    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
   animate() {
-    this.frame = window.requestAnimationFrame(this.animate);
-    // this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // if (true) requestAnimationFrame(this.animate);
-    let interval = setInterval(() => {
-      this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }, 1)
+    this.frame = requestAnimationFrame(this.animate);
+    this.clear();
     // this.house.draw();
     this.house.grow();
     this.personArr.forEach(person => person.animate())

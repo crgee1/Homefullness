@@ -9,7 +9,6 @@ export default class Graph {
     this.svg = d3.select(div).append("svg")
       .attr("height", "100%")
       .attr("width", "100%");
-      console.log(this.display)
 
     this.setup(display);
   }

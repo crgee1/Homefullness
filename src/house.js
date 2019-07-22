@@ -15,9 +15,6 @@ export default class House {
       this.size += 1;
       this.pos.x -= .5;
       this.pos.y -= .95;
-      // this.size += .1;
-      // this.pos.x -= .05;
-      // this.pos.y -= .08;
     }
   }
 
