@@ -9,12 +9,12 @@ The intent of
 - [ ] Display homeless rates by year (SF specific or bigger depending on dataset)
 - [ ] Visualize figures, representing the homelessness rate, going into a house and it growing proportionally
 - [ ] Display how much space is required to house the givin amount of those without homes
-- [ ] Different modes of visualization (one big house, rows of neighborhoods, graphs ...)
 
 ## Architectures and Technologies
 
-* Vanilla JavaScript for overall structure and logic,
-* HTML5 Canvas for DOM manipulation and rendering,
+* Vanilla JavaScript for overall structure and logic
+* HTML5 Canvas for DOM manipulation and rendering
+* D3 for graph rendering
 * Webpack to bundle and serve up the various scripts
 
 ## Wireframes
