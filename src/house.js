@@ -2,7 +2,7 @@ export default class House {
   constructor(ctx) {
     this.ctx = ctx;
     this.house = new Image();
-    this.house.src = "../assets/images/house.png"
+    this.house.src = "./assets/images/house.png"
     this.pos = { x: 430, y: 450 };
     this.size = 100;
     this.grow = this.grow.bind(this);

@@ -2,7 +2,7 @@ export default class Person {
   constructor(ctx, n) {
     this.ctx = ctx;
     this.person = new Image();
-    this.person.src = "../assets/images/person-icon.png"
+    this.person.src = "./assets/images/person-icon.png"
     this.startY = 490;
     this.startX = 446;
     this.endX = 30 + 30 * (n % 7);
