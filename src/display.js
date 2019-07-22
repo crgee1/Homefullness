@@ -35,6 +35,7 @@ export default class Render {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     cancelAnimationFrame(this.frame);
     this.personArr = [];
+    this.house.reset();
   }
 
   clear() {

@@ -22,4 +22,9 @@ export default class House {
     this.frame = requestAnimationFrame(this.draw);
     this.ctx.drawImage(this.house, this.pos.x, this.pos.y, this.size, this.size);
   }
+
+  reset() {
+    this.size = 100;
+    this.pos = { x: 430, y: 450 };
+  }
 }
