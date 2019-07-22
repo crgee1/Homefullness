@@ -30,7 +30,7 @@ export default class Graph {
       .text(function (d) { return d.value })
       .attr("class", "text")
       .attr("x", function (d, i) { return (i * 60) + 30 })
-      .attr("y", function (d, i) { return 370 - (d.value / 28) });
+      .attr("y", function (d, i) { return 380 - (d.value / 28) });
    
     this.svg.selectAll("label")
       .data(this.data)

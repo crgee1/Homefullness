@@ -11,8 +11,8 @@ export default class text {
   }
 
   animate(value) {
-    this.ctx.fillText(`${this.display(this.number)} sq ft needed`, 350, 800);
-    if (this.number < value) this.number += 10000;
+    this.ctx.fillText(`${this.display(this.number)} sq ft needed`, 330, 800);
+    if (this.number < value) this.number += 15000;
   }
 
   reset() {

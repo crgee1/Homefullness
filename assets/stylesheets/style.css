@@ -11,6 +11,7 @@ html, body {
 
 body {
   display: flex;
+  background-color: cornsilk;
 }
 
 #graph {
@@ -22,7 +23,7 @@ body {
 }
 
 .bar {
-  
+  fill: cornflowerblue;
 }
 
 .legend {
@@ -33,11 +34,19 @@ body {
 }
 
 .bar:hover {
-  fill: gray;
+  fill: orangered;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.text {
+  color: white;
+}
+
+h9 {
+  font-size: 9px;
 }
