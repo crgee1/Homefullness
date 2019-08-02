@@ -1,6 +1,6 @@
 # Homefullness
 
-![gif](https://media.giphy.com/media/ftN4SrHd8bvzc6c6NE/giphy.gif)
+![gif](https://media.giphy.com/media/LM1oZ2Z9LLZSLYBFVC/giphy.gif)
 
 The intent of 
 [Homefullness](https://crgee1.github.io/Homefullness/) is to visualize the homeless population for a given year. Figures will exit a house and it will grow proportionally based on the population for that year.
