@@ -58,7 +58,11 @@ body {
 }
 
 .text {
-  color: white;
+  /* color: white; */
+}
+
+h3 {
+  margin-left: -1.2em;
 }
 
 h9 {

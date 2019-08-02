@@ -29,7 +29,7 @@ export default class Graph {
       .enter().append("text")
       .text(function (d) { return d.value })
       .attr("class", "text")
-      .attr("x", function (d, i) { return (i * 60) + 30 })
+      .attr("x", function (d, i) { return (i * 60) + 28 })
       .attr("y", function (d, i) { return 380 - (d.value / 28) });
    
     this.svg.selectAll("label")
@@ -37,7 +37,7 @@ export default class Graph {
       .enter().append("text")
       .text(function (d) { return d.year })
       .attr("class", "label")
-      .attr("x", function (d, i) { return (i * 60) + 30 })
+      .attr("x", function (d, i) { return (i * 60) + 27 })
       .attr("y", function (d, i) { return 385 });
   }
   
