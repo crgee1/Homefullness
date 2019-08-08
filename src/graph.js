@@ -1,4 +1,5 @@
 import * as d3 from 'd3'; 
+import Chart from 'chart.js';
 import data from './data';
 import Display from './display';
 
@@ -8,7 +9,7 @@ export default class Graph {
     this.data = data;
     this.svg = d3.select(graph).append("svg")
       .attr("height", 441.78)
-      .attr("width", 500);
+      .attr("width", 600);
       // .attr("height", "100%")
       // .attr("width", "100%");
     this.setup(display);
@@ -23,7 +24,7 @@ export default class Graph {
       .on('mouseleave', function (d) {display.cancel()} )
       .attr("height", function (d, i) { return (d.value / 30) })
       .attr("width", "40")
-      .attr("x", function (d, i) { return (i * 60) + 25 })
+      .attr("x", function (d, i) { return (i * 60) + 60 })
       .attr("y", function (d, i) { return 370 - (d.value / 30) });
 
     this.svg.selectAll("text")
@@ -31,7 +32,7 @@ export default class Graph {
       .enter().append("text")
       .text(function (d) { return d.value })
       .attr("class", "text")
-      .attr("x", function (d, i) { return (i * 60) + 28 })
+      .attr("x", function (d, i) { return (i * 60) + 63 })
       .attr("y", function (d, i) { return 380 - (d.value / 28) });
    
     // this.svg.selectAll("label")
@@ -55,8 +56,21 @@ export default class Graph {
 
     //Append group and insert axis
     this.svg.append("g")
-      .attr("transform", "translate(11," + 380 + ")")
+      .attr("transform", "translate(48," + 380 + ")")
       .call(x_axis);
+
+    // scale = d3.scaleBand()
+    //   .domain([10000,0])
+    //   .range([0, 380]);
+
+    // // Add scales to axis
+    // var y_axis = d3.axisLeft()
+    //   .scale(scale);
+
+    // //Append group and insert axis
+    // this.svg.append("g")
+    //   .attr("transform", "translate(48," + 0 + ")")
+    //   .call(y_axis)
 
   }
   
