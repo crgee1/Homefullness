@@ -42,6 +42,12 @@ body {
   justify-content: center;
 }
 
+#myChart {
+  width: 500px;
+  height: 500px;
+  margin-left: 10px;
+}
+
 .bar {
   fill: cornflowerblue;
 }

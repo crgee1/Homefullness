@@ -4,7 +4,7 @@ import data from './data';
 import Display from './display';
 
 export default class Graph {
-  constructor(canvas) {
+  constructor(canvas, ctx) {
     const display = new Display(canvas);
     this.data = data;
     this.svg = d3.select(graph).append("svg")
@@ -12,15 +12,46 @@ export default class Graph {
       .attr("width", 600);
       // .attr("height", "100%")
       // .attr("width", "100%");
-    this.setup(display);
+    this.setup(display, ctx, this.setupChart);
+    // this.setupChart();
   }
 
-  setup(display){
+  setupChart(ctx) {
+    var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'pie',
+
+      // The data for our dataset
+      data: {
+        labels: Object.keys(data[0]).slice(2),
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: ['red', 'orange', 'yellow', 'green', 'blue'],
+          // borderColor: 'rgb(255, 99, 132)',
+          data: [10,20,30,40,50],
+        }]
+      },
+
+      // Configuration options go here
+      options: {
+        responsive: false,
+      }
+    });
+    setTimeout(() => {
+      chart.destroy();
+      console.log('pizza')
+    }, 1000);
+  }
+
+  setup(display, that, cb){
     this.svg.selectAll("rect")
       .data(this.data)
       .enter().append("rect")
       .attr("class", "bar")
-      .on('mouseenter', function (d) {display.setupAnimate(d.value, d.year)} )
+      .on('mouseenter', function (d) {
+        display.setupAnimate(d.value, d.year);
+        cb(that);
+      })
       .on('mouseleave', function (d) {display.cancel()} )
       .attr("height", function (d, i) { return (d.value / 30) })
       .attr("width", "40")
