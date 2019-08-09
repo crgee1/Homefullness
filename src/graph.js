@@ -16,19 +16,18 @@ export default class Graph {
     // this.setupChart();
   }
 
-  setupChart(ctx) {
+  setupChart(ctx, data) {
     var chart = new Chart(ctx, {
       // The type of chart we want to create
       type: 'pie',
 
       // The data for our dataset
       data: {
-        labels: Object.keys(data[0]).slice(2),
+        labels: Object.keys(data).slice(2),
         datasets: [{
-          label: 'My First dataset',
           backgroundColor: ['red', 'orange', 'yellow', 'green', 'blue'],
           // borderColor: 'rgb(255, 99, 132)',
-          data: [10,20,30,40,50],
+          data: Object.values(data).slice(2),
         }]
       },
 
@@ -37,10 +36,9 @@ export default class Graph {
         responsive: false,
       }
     });
-    setTimeout(() => {
-      chart.destroy();
-      console.log('pizza')
-    }, 1000);
+    // setTimeout(() => {
+    //   chart.destroy();
+    // }, 10000);
   }
 
   setup(display, that, cb){
@@ -49,8 +47,9 @@ export default class Graph {
       .enter().append("rect")
       .attr("class", "bar")
       .on('mouseenter', function (d) {
+        console.log(d);
         display.setupAnimate(d.value, d.year);
-        cb(that);
+        cb(that, d);
       })
       .on('mouseleave', function (d) {display.cancel()} )
       .attr("height", function (d, i) { return (d.value / 30) })
