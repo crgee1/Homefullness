@@ -2,13 +2,14 @@ import * as d3 from 'd3';
 import Chart from 'chart.js';
 import data from './data';
 import Display from './display';
+import 'chartjs-plugin-labels';
 
 export default class Graph {
   constructor(canvas, ctx) {
     const display = new Display(canvas);
     this.data = data;
     this.svg = d3.select(graph).append("svg")
-      .attr("height", 441.78)
+      .attr("height", 400)
       .attr("width", 600);
       // .attr("height", "100%")
       // .attr("width", "100%");
@@ -25,7 +26,7 @@ export default class Graph {
       data: {
         labels: Object.keys(data).slice(2),
         datasets: [{
-          backgroundColor: ['red', 'orange', 'yellow', 'green', 'blue'],
+          backgroundColor: ['lightBlue', 'darkblue','teal', 'indigo', 'purple' ],
           // borderColor: 'rgb(255, 99, 132)',
           data: Object.values(data).slice(2),
         }]
@@ -33,8 +34,19 @@ export default class Graph {
 
       // Configuration options go here
       options: {
+        events: [],
         responsive: false,
-      }
+        plugins: {
+          labels: {
+            // render: 'percentage',
+            fontColor: 'black',
+            // precision: 4,
+            arc: true,
+            position: 'outside',
+          }
+        },
+      },
+      
     });
     // setTimeout(() => {
     //   chart.destroy();
@@ -47,7 +59,6 @@ export default class Graph {
       .enter().append("rect")
       .attr("class", "bar")
       .on('mouseenter', function (d) {
-        console.log(d);
         display.setupAnimate(d.value, d.year);
         cb(that, d);
       })
@@ -55,7 +66,7 @@ export default class Graph {
       .attr("height", function (d, i) { return (d.value / 30) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 60 })
-      .attr("y", function (d, i) { return 370 - (d.value / 30) });
+      .attr("y", function (d, i) { return 350 - (d.value / 30) });
 
     this.svg.selectAll("text")
       .data(this.data)
@@ -63,7 +74,7 @@ export default class Graph {
       .text(function (d) { return d.value })
       .attr("class", "text")
       .attr("x", function (d, i) { return (i * 60) + 63 })
-      .attr("y", function (d, i) { return 380 - (d.value / 28) });
+      .attr("y", function (d, i) { return 400 - (d.value / 29) });
    
     // this.svg.selectAll("label")
     //   .data(this.data)
@@ -86,7 +97,7 @@ export default class Graph {
 
     //Append group and insert axis
     this.svg.append("g")
-      .attr("transform", "translate(48," + 380 + ")")
+      .attr("transform", "translate(48," + 360 + ")")
       .call(x_axis);
 
     // scale = d3.scaleBand()
