@@ -3,10 +3,10 @@ export default class Person {
     this.ctx = ctx;
     this.person = new Image();
     this.person.src = "./assets/images/person-icon.png"
-    this.startY = 490;
+    this.startY = 330;
     this.startX = 446;
-    this.endX = 30 + 30 * (n % 7);
-    this.endY = 10 + 62 * Math.floor(n / 7);
+    this.endX = 20 + 20 * (n % 10);
+    this.endY = 10 + 52 * Math.floor(n / 10);
     // while (this.endX > this.startX - 100 && this.endX < this.startX + 100 ) this.endX = Math.random() * 800;
     this.animate = this.animate.bind(this);
   }

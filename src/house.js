@@ -3,7 +3,7 @@ export default class House {
     this.ctx = ctx;
     this.house = new Image();
     this.house.src = "./assets/images/house.png"
-    this.pos = { x: 430, y: 450 };
+    this.pos = { x: 430, y: 280 };
     this.size = 100;
     this.grow = this.grow.bind(this);
     this.draw = this.draw.bind(this);
@@ -25,6 +25,6 @@ export default class House {
 
   reset() {
     this.size = 100;
-    this.pos = { x: 430, y: 450 };
+    this.pos = { x: 430, y: 280 };
   }
 }
