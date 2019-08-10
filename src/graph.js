@@ -9,7 +9,7 @@ export default class Graph {
     const display = new Display(canvas);
     this.data = data;
     this.svg = d3.select(graph).append("svg")
-      .attr("height", 350)
+      .attr("height", 290)
       .attr("width", 600);
       // .attr("height", "100%")
       // .attr("width", "100%");
@@ -70,7 +70,7 @@ export default class Graph {
       .attr("height", function (d, i) { return (d.value / 40) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 60 })
-      .attr("y", function (d, i) { return 310 - (d.value / 40) });
+      .attr("y", function (d, i) { return 270 - (d.value / 40) });
 
     this.svg.selectAll("text")
       .data(this.data)
@@ -78,7 +78,7 @@ export default class Graph {
       .text(function (d) { return d.value })
       .attr("class", "text")
       .attr("x", function (d, i) { return (i * 60) + 63 })
-      .attr("y", function (d, i) { return 290 - (d.value / 40) });
+      .attr("y", function (d, i) { return 260 - (d.value / 40) });
    
     // this.svg.selectAll("label")
     //   .data(this.data)
@@ -101,7 +101,7 @@ export default class Graph {
 
     //Append group and insert axis
     this.svg.append("g")
-      .attr("transform", "translate(48," + 310 + ")")
+      .attr("transform", "translate(48," + 270 + ")")
       .call(x_axis);
 
     // scale = d3.scaleBand()

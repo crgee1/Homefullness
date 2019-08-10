@@ -14,7 +14,7 @@ section, summary, time, mark, audio, video {
 }
 
 canvas {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   display: block;
   /* margin: 0 auto; */
 }
@@ -36,7 +36,7 @@ body {
 
 #graph {
   margin: 0 auto;
-  height: 66%;
+  /* height: 66%; */
   width: 600px;
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@ body {
 
 #myChart {
   width: 500px;
-  height: 320px;
+  /* height: 320px; */
   /* margin-left: 10px; */
   /* margin-bottom: 10px; */
 }
