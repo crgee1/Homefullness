@@ -14,7 +14,7 @@ section, summary, time, mark, audio, video {
 }
 
 canvas {
-  /* border: 1px solid #000; */
+  border: 1px solid #000;
   display: block;
   /* margin: 0 auto; */
 }
@@ -45,8 +45,14 @@ body {
 
 #myChart {
   width: 500px;
-  height: 500px;
-  margin-left: 10px;
+  height: 320px;
+  /* margin-left: 10px; */
+  /* margin-bottom: 10px; */
+}
+
+#canvas {
+  /* height: 900px;
+  width: 500px; */
 }
 
 .bar {
@@ -85,4 +91,5 @@ h9 {
 
 .title {
   margin-top: .67em;
+  margin-bottom: .5em;
 }

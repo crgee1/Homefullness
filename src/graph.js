@@ -9,7 +9,7 @@ export default class Graph {
     const display = new Display(canvas);
     this.data = data;
     this.svg = d3.select(graph).append("svg")
-      .attr("height", 400)
+      .attr("height", 350)
       .attr("width", 600);
       // .attr("height", "100%")
       // .attr("width", "100%");
@@ -18,6 +18,8 @@ export default class Graph {
   }
 
   setupChart(ctx, data) {
+    ctx.canvas.width = 500;
+    ctx.canvas.height = 320;
     var chart = new Chart(ctx, {
       // The type of chart we want to create
       type: 'pie',
@@ -26,16 +28,18 @@ export default class Graph {
       data: {
         labels: Object.keys(data).slice(2),
         datasets: [{
-          backgroundColor: ['lightBlue', 'darkblue','teal', 'indigo', 'purple' ],
+          backgroundColor: ['lightBlue', 'darkblue','teal', 'indigo', 'purple', 'grey' ],
           // borderColor: 'rgb(255, 99, 132)',
           data: Object.values(data).slice(2),
         }]
       },
-
+      
       // Configuration options go here
       options: {
+        legend: { position: 'left' },
         events: [],
         responsive: false,
+        maintainAspectRatio: false,
         plugins: {
           labels: {
             // render: 'percentage',
@@ -63,10 +67,10 @@ export default class Graph {
         cb(that, d);
       })
       .on('mouseleave', function (d) {display.cancel()} )
-      .attr("height", function (d, i) { return (d.value / 30) })
+      .attr("height", function (d, i) { return (d.value / 40) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 60 })
-      .attr("y", function (d, i) { return 350 - (d.value / 30) });
+      .attr("y", function (d, i) { return 310 - (d.value / 40) });
 
     this.svg.selectAll("text")
       .data(this.data)
@@ -74,7 +78,7 @@ export default class Graph {
       .text(function (d) { return d.value })
       .attr("class", "text")
       .attr("x", function (d, i) { return (i * 60) + 63 })
-      .attr("y", function (d, i) { return 400 - (d.value / 29) });
+      .attr("y", function (d, i) { return 290 - (d.value / 40) });
    
     // this.svg.selectAll("label")
     //   .data(this.data)
@@ -97,7 +101,7 @@ export default class Graph {
 
     //Append group and insert axis
     this.svg.append("g")
-      .attr("transform", "translate(48," + 360 + ")")
+      .attr("transform", "translate(48," + 310 + ")")
       .call(x_axis);
 
     // scale = d3.scaleBand()

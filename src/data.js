@@ -24,11 +24,11 @@
   {
     year: 2007,
     value: 6377,
-    white: 43,
+    white: 41,
     black: 47,
     latino: 6,
     americanIndian: 2,
-    asian: 2,
+    asian: 4,
   },
   {
     year: 2009,
@@ -36,9 +36,9 @@
     white: 22,
     black: 17,
     latino: 3,
-    americanIndian: 1,
-    asian: 1,
-    unknown: 56,
+    americanIndian: 4,
+    asian: 4,
+    unknown: 50,
   },
   {
     year: 2011,

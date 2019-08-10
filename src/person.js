@@ -15,7 +15,7 @@ export default class Person {
     const speed = 2;
     // const speed = .55;
     // this.frame = requestAnimationFrame(this.animate);
-    this.ctx.drawImage(this.person, this.startX, this.startY, 80, 80);
+    this.ctx.drawImage(this.person, this.startX, this.startY, 60, 60);
     let slope = (this.endY - this.startY) / (this.endX - this.startX);
     if (this.startX < this.endX && this.startY > this.endY) {
       this.startX += speed;
