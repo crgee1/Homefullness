@@ -42,7 +42,7 @@ export default class Graph {
         maintainAspectRatio: false,
         plugins: {
           labels: {
-            // render: 'percentage',
+            render: 'percentage',
             fontColor: 'black',
             // precision: 4,
             arc: true,
