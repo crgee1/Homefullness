@@ -21,10 +21,7 @@ export default class Graph {
     ctx.canvas.width = 500;
     ctx.canvas.height = 320;
     var chart = new Chart(ctx, {
-      // The type of chart we want to create
       type: 'pie',
-
-      // The data for our dataset
       data: {
         labels: Object.keys(data).slice(2),
         datasets: [{
@@ -33,8 +30,6 @@ export default class Graph {
           data: Object.values(data).slice(2),
         }]
       },
-      
-      // Configuration options go here
       options: {
         legend: { position: 'left' },
         events: [],
@@ -44,7 +39,6 @@ export default class Graph {
           labels: {
             render: 'percentage',
             fontColor: 'black',
-            // precision: 4,
             arc: true,
             position: 'outside',
           }
@@ -52,9 +46,6 @@ export default class Graph {
       },
       
     });
-    // setTimeout(() => {
-    //   chart.destroy();
-    // }, 10000);
   }
 
   setup(display, that, cb){
@@ -80,16 +71,6 @@ export default class Graph {
       .attr("x", function (d, i) { return (i * 60) + 63 })
       .attr("y", function (d, i) { return 260 - (d.value / 40) });
    
-    // this.svg.selectAll("label")
-    //   .data(this.data)
-    //   .enter().append("text")
-    //   .text(d => d.year)
-    //   .attr("class", "label")
-    //   .attr("x", function (d, i) { return (i * 60) + 27 })
-    //   .attr("y", function (d, i) { return 385 });
-
-
-
     // Create scale
     var scale = d3.scaleBand()
       .domain(this.data.map(d => d.year))
@@ -116,7 +97,6 @@ export default class Graph {
     // this.svg.append("g")
     //   .attr("transform", "translate(48," + 0 + ")")
     //   .call(y_axis)
-
   }
   
 }

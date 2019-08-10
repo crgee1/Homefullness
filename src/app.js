@@ -5,4 +5,3 @@ document.addEventListener("DOMContentLoaded", () => {
   const ctx = document.getElementById('myChart').getContext('2d');
   new Graph(canvas, ctx);
 })
-
