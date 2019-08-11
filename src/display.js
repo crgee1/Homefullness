@@ -37,8 +37,8 @@ export default class Render {
     this.clear();
     this.text.animate(this.value * 1000);
     this.house.grow();
-    if (this.i < Math.floor(this.value / 100)) {
-      this.personArr.push(new Person(this.ctx, this.i));
+    if (this.i < Math.floor(this.value / 60)) {
+      this.personArr.push(new Person(this.ctx, 'latino', this.i));
       this.i ++;
     }
     this.personArr.forEach(person => person.animate())

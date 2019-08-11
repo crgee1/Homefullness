@@ -51,7 +51,7 @@ body {
 }
 
 #canvas {
-  height: 548px;
+  height: 580px;
   /* width: 500px; */
 }
 
@@ -64,7 +64,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 60px;
-  margin: 20px 0 58px 0;
+  margin: 20px 0 20px 0;
   
 }
 
