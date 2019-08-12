@@ -18,7 +18,7 @@ The intent of
 
 ## Features
 
-![pic](https://github.com/crgee1/Homefullness/blob/master/assets/images/screenshot1.png)
+![pic](https://github.com/crgee1/Homefullness/blob/master/assets/images/screenCapture1.png)
 
 * Bar graph made with D3.js with a hover-over event on each bar that is tied to the data for that year
 * Pie chart made with Chart.js that breaks done the percentages of the ethnicities of that year
