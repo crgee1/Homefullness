@@ -9,7 +9,7 @@ export default class Graph {
     const display = new Display(canvas);
     this.data = data;
     this.svg = d3.select(graph).append("svg")
-      .attr("height", 290)
+      .attr("height", 280)
       .attr("width", 600);
       // .attr("height", "100%")
       // .attr("width", "100%");
@@ -25,7 +25,7 @@ export default class Graph {
       data: {
         labels: Object.keys(data).slice(2),
         datasets: [{
-          backgroundColor: ['darkblue', 'teal', 'indigo', 'purple', 'lightBlue', 'grey'],
+          backgroundColor: ['darkblue', 'teal', 'purple', 'turquoise', 'lightBlue', 'grey'],
           // borderColor: 'rgb(255, 99, 132)',
           data: Object.values(data).slice(2),
         }]
@@ -57,10 +57,10 @@ export default class Graph {
         setupChart(ctx, d);
       })
       .on('mouseleave', function (d) {display.cancel()} )
-      .attr("height", function (d, i) { return (d.value / 40) })
+      .attr("height", function (d, i) { return (d.value / 43) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 60 })
-      .attr("y", function (d, i) { return 270 - (d.value / 40) });
+      .attr("y", function (d, i) { return 260 - (d.value / 43) });
 
     this.svg.selectAll("text")
       .data(this.data)
@@ -68,7 +68,7 @@ export default class Graph {
       .text(function (d) { return d.value })
       .attr("class", "text")
       .attr("x", function (d, i) { return (i * 60) + 63 })
-      .attr("y", function (d, i) { return 260 - (d.value / 40) });
+      .attr("y", function (d, i) { return 250 - (d.value / 43) });
    
     // Create scale
     var scale = d3.scaleBand()
@@ -81,7 +81,7 @@ export default class Graph {
 
     //Append group and insert axis
     this.svg.append("g")
-      .attr("transform", "translate(48," + 270 + ")")
+      .attr("transform", "translate(48," + 260 + ")")
       .call(x_axis);
 
     // scale = d3.scaleBand()
