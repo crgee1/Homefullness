@@ -57,18 +57,18 @@ export default class Graph {
         setupChart(ctx, d);
       })
       .on('mouseleave', function (d) {display.cancel()} )
-      .attr("height", function (d, i) { return (d.value / 43) })
+      .attr("height", function (d, i) { return (d.totalPop / 43) })
       .attr("width", "40")
       .attr("x", function (d, i) { return (i * 60) + 60 })
-      .attr("y", function (d, i) { return 260 - (d.value / 43) });
+      .attr("y", function (d, i) { return 260 - (d.totalPop / 43) });
 
     this.svg.selectAll("text")
       .data(this.data)
       .enter().append("text")
-      .text(function (d) { return d.value })
+      .text(function (d) { return d.totalPop })
       .attr("class", "text")
       .attr("x", function (d, i) { return (i * 60) + 63 })
-      .attr("y", function (d, i) { return 250 - (d.value / 43) });
+      .attr("y", function (d, i) { return 250 - (d.totalPop / 43) });
    
     // Create scale
     var scale = d3.scaleBand()

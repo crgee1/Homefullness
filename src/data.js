@@ -1,7 +1,7 @@
  const homeless = [
   {
     year: 2005, 
-    value: 6248,
+    totalPop: 6248,
     White: 39,
     Black: 42,
     Latino: 12,
@@ -10,7 +10,7 @@
   }, 
   {
     year: 2007,
-    value: 6377,
+    totalPop: 6377,
     White: 41,
     Black: 47,
     Latino: 6,
@@ -19,7 +19,7 @@
   },
   {
     year: 2009,
-    value: 6514,
+    totalPop: 6514,
     White: 22,
     Black: 17,
     Latino: 3,
@@ -29,7 +29,7 @@
   },
   {
     year: 2011,
-    value: 6455,
+    totalPop: 6455,
     White: 35,
     Black: 39,
     Latino: 13,
@@ -38,7 +38,7 @@
   },
   {
     year: 2013,
-    value: 7350,
+    totalPop: 7350,
     White: 30,
     Black: 30,
     Latino: 27,
@@ -47,7 +47,7 @@
   },
   {
     year: 2015,
-    value: 7539,
+    totalPop: 7539,
     White: 39,
     Black: 36,
     Latino: 19,
@@ -56,7 +56,7 @@
   },
   {
     year: 2017,
-    value: 7499,
+    totalPop: 7499,
     White: 35,
     Black: 34,
     Latino: 22,
@@ -65,7 +65,7 @@
   },
   {
     year: 2019,
-    value: 9784,
+    totalPop: 9784,
     White: 30,
     Black: 37,
     Latino: 20,
