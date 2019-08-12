@@ -41,10 +41,7 @@ export default class Render {
     this.frame = requestAnimationFrame(this.animate);
     this.clear();
     this.text.animate(this.value * 1000);
-    this.house.grow();
-    // if (this.i < Math.floor(this.value / 60)) {
-    //   this.i ++;
-    // }
+    this.house.grow(this.value);
     this.addPerson();
     this.personArr.forEach(person => person.animate())
   }
