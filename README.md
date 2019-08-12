@@ -1,9 +1,10 @@
 # Homefullness
 
+[Live Link](https://crgee1.github.io/Homefullness/)
+
 ![gif](https://media.giphy.com/media/duKwX94oohcerw7775/giphy.gif)
 
-The intent of 
-[Homefullness](https://crgee1.github.io/Homefullness/) is to visualize the homeless population for a given year. Figures will exit a house and it will grow proportionally based on the population for that year.
+The intent of Homefullness is to visualize the homeless population for a given year. Figures will exit a house and it will grow proportionally based on the population for that year.
 
 ## Technologies
 
