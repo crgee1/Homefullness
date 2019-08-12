@@ -66,11 +66,11 @@
   {
     year: 2019,
     value: 9784,
-    White: 29,
+    White: 30,
     Black: 37,
-    Latino: 22,
+    Latino: 20,
     'American Indian': 5,
-    Asian: 7,
+    Asian: 8,
   }
 ]
 

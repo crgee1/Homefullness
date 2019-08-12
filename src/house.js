@@ -11,7 +11,7 @@ export default class House {
 
   grow() {
     this.ctx.drawImage(this.house, this.pos.x, this.pos.y, this.size, this.size);
-    if (this.size < 200) {
+    if (this.size < 400) {
       this.size += 1;
       this.pos.x -= .5;
       this.pos.y -= .95;

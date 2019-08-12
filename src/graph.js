@@ -25,7 +25,7 @@ export default class Graph {
       data: {
         labels: Object.keys(data).slice(2),
         datasets: [{
-          backgroundColor: ['lightBlue', 'darkblue','teal', 'indigo', 'purple', 'grey' ],
+          backgroundColor: ['lightBlue', 'darkblue','teal', 'indigo', 'purple', 'grey'],
           // borderColor: 'rgb(255, 99, 132)',
           data: Object.values(data).slice(2),
         }]
@@ -44,18 +44,17 @@ export default class Graph {
           }
         },
       },
-      
     });
   }
 
-  setup(display, that, cb){
+  setup(display, ctx, setupChart){
     this.svg.selectAll("rect")
       .data(this.data)
       .enter().append("rect")
       .attr("class", "bar")
       .on('mouseenter', function (d) {
-        display.setupAnimate(d.value, d.year);
-        cb(that, d);
+        display.setupAnimate(d);
+        setupChart(ctx, d);
       })
       .on('mouseleave', function (d) {display.cancel()} )
       .attr("height", function (d, i) { return (d.value / 40) })

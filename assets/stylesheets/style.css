@@ -52,6 +52,7 @@ body {
 
 #canvas {
   height: 580px;
+  margin-right: 40px;
   /* width: 500px; */
 }
 
