@@ -7,6 +7,7 @@ export default class House {
     this.size = 100;
     this.grow = this.grow.bind(this);
   }
+  
   grow(value) {
     this.ctx.drawImage(this.house, this.pos.x, this.pos.y, this.size, this.size);
     if (this.size < value / 24.46) {
