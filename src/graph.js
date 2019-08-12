@@ -25,7 +25,7 @@ export default class Graph {
       data: {
         labels: Object.keys(data).slice(2),
         datasets: [{
-          backgroundColor: ['lightBlue', 'darkblue','teal', 'indigo', 'purple', 'grey'],
+          backgroundColor: ['darkblue', 'teal', 'indigo', 'purple', 'lightBlue', 'grey'],
           // borderColor: 'rgb(255, 99, 132)',
           data: Object.values(data).slice(2),
         }]
