@@ -11,10 +11,7 @@ export default class Graph {
     this.svg = d3.select(graph).append("svg")
       .attr("height", 280)
       .attr("width", 600);
-      // .attr("height", "100%")
-      // .attr("width", "100%");
     this.setup(display, ctx, this.setupChart);
-    // this.setupChart();
   }
 
   setupChart(ctx, data) {
@@ -26,7 +23,6 @@ export default class Graph {
         labels: Object.keys(data).slice(2),
         datasets: [{
           backgroundColor: ['darkblue', 'teal', 'purple', 'turquoise', 'lightBlue', 'grey'],
-          // borderColor: 'rgb(255, 99, 132)',
           data: Object.values(data).slice(2),
         }]
       },
