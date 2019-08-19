@@ -28,3 +28,10 @@ The intent of Homefullness is to visualize the homeless population for a given y
 ## Project Design
 
 The intent of the project was to utilize javascript to its fullest and to be able to have a working product done in around 4 days. Much of that time was dedicated to understanding Canvas and D3.js.
+
+The main challenge was learning D3.js and binding event listeners on the bar graph on hover to trigger the animations.
+
+## Future Development
+
+* Different statisitics besides ethnicity breakdown (mental health, veteren status...)
+* Additional information like potential costs, along the sq ft required
