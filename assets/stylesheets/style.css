@@ -85,6 +85,10 @@ h3 {
   margin-left: -.9em;
 }
 
+h6 {
+  font-weight: 400;
+}
+
 h9 {
   font-size: 9px;
 }
