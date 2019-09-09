@@ -13,10 +13,6 @@ The intent of Homefullness is to visualize the homeless population for a given y
 * D3.js and Chart.js for graph rendering
 * Webpack to bundle and serve up the various scripts
 
-## Wireframes
-
-[Wireframe Link](https://xd.adobe.com/view/3416aa7e-9ce0-4a51-74c2-a0bb1ac39f1f-4227/?hints=off)
-
 ## Features
 
 ![pic](https://github.com/crgee1/Homefullness/blob/master/assets/images/screenCapture1.png)
@@ -65,6 +61,12 @@ addPerson() {
 The intent of the project was to utilize javascript to its fullest and to be able to have a working product done in around 4 days. Much of that time was dedicated to understanding Canvas and D3.js.
 
 The main challenge was learning D3.js and binding event listeners on the bar graph on hover to trigger the animations.
+
+
+## Wireframes
+
+[Wireframe Link](https://xd.adobe.com/view/3416aa7e-9ce0-4a51-74c2-a0bb1ac39f1f-4227/?hints=off)
+
 
 ## Future Development
 
