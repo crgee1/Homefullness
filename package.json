@@ -22,9 +22,9 @@
     "chart.js": "^2.8.0",
     "chartjs-plugin-labels": "^1.1.0",
     "d3": "^5.9.7",
-    "webpack": "^4.36.1"
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^5.0.1"
   }
 }
